@@ -3,8 +3,8 @@ const express = require('express');
 
 const router = express.Router();
 
-const rootRoute = require('./root');
-
-router.use(rootRoute);
+router.get('/', (req, res) => {
+    res.json({ message: 'Hello World!' });
+});
 
 module.exports = router;
