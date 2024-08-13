@@ -1,6 +1,5 @@
-
-const express = require('express');
-const routes = require('./routes/all');
+const express = require("express");
+const routes = require("./routes/all");
 
 const app = express();
 

@@ -1,9 +1,8 @@
-
-const express = require('express');
+const express = require("express");
 
 const router = express.Router();
 
-const rootRoute = require('./root');
+const rootRoute = require("./root");
 
 router.use(rootRoute);
 
