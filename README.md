@@ -56,6 +56,12 @@ npm run test
 
 Generate all possible letter combinations for a given phone number.
 
+#### CURL
+
+```bash
+curl -X POST http://localhost:4000/combinations -H "Content-Type: application/json" -d '{"phoneNumber": "23"}'
+```
+
 #### Request body:
 
 ```json
