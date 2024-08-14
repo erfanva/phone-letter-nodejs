@@ -20,7 +20,7 @@ jobs:
 
       - name: Deploy to server
         run: |
-          ssh -o StrictHostKeyChecking=no root@botsapi.erfanva.com << 'EOF'
+          ssh -o StrictHostKeyChecking=no root@${{ secrets.SSH_SERVER }} -p ${{ secrets.SSH_PORT }} << 'EOF'
             cd /root/node/paeezan/phone-letter-nodejs
             git pull origin main
             docker build -t phone-combinations .
