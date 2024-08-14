@@ -1,10 +1,11 @@
 {
   "name": "src",
   "version": "1.0.0",
-  "main": "app.js",
+  "main": "src/server.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "test": "mocha --recursive",
+    "start": "node src/server.js"
   },
   "keywords": [],
   "author": "",
@@ -12,5 +13,9 @@
   "description": "",
   "dependencies": {
     "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "chai": "^5.1.1",
+    "mocha": "^10.7.3"
   }
 }

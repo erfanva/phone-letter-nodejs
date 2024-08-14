@@ -1,11 +1,11 @@
-const express = require("express");
+import { Router } from "express";
 
-const router = express.Router();
+import rootRoute from "./root.js";
+import combinationsRoute from "./combinations.js";
 
-const rootRoute = require("./root");
-const combinationsRoute = require("./combinations");
+const router = Router();
 
 router.use(rootRoute);
-router.use('/combinations', combinationsRoute);
+router.use("/combinations", combinationsRoute);
 
-module.exports = router;
+export default router;
