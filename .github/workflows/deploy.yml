@@ -23,6 +23,5 @@ jobs:
           ssh -o StrictHostKeyChecking=no root@${{ secrets.SSH_SERVER }} -p ${{ secrets.SSH_PORT }} << 'EOF'
             cd /root/node/paeezan/phone-letter-nodejs
             git pull origin main
-            docker build -t phone-combinations .
-            docker run -d -p 4000:3000 phone-combinations 
+            docker-compose up -d
           EOF
