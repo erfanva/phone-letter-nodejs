@@ -1,5 +1,5 @@
 import { expect } from "chai";
-import phoneLetterCombinator from "../src/utils/phoneLetterCombinator.js";
+import phoneLetterCombinator from "../../src/utils/phoneLetterCombinator.js";
 
 describe("Combinations Service", () => {
   it("empty", () => {
