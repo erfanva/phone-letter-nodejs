@@ -1,0 +1,28 @@
+name: Deploy to erfanva.com
+
+on:
+  push:
+    branches:
+      - main # Trigger deployment on push to the main branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up SSH
+        uses: webfactory/ssh-agent@v0.10.1
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Deploy to server
+        run: |
+          ssh -o StrictHostKeyChecking=no root@botsapi.erfanva.com << 'EOF'
+            cd /root/node/paeezan/phone-letter-nodejs
+            git pull origin main
+            docker build -t phone-combinations .
+            docker run -d -p 4000:3000 phone-combinations 
+          EOF
