@@ -1,9 +1,8 @@
 import { Router } from "express";
+import combinationsController from "../controllers/combinationsController.js";
 
 const router = Router();
 
-router.get("/", (req, res) => {
-  res.json({ message: "Hello World!" });
-});
+router.post("/", combinationsController.generateCombinations);
 
 export default router;
