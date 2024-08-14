@@ -1,9 +1,9 @@
-import * as chai from "chai";
-const expect = chai.expect;
+import * as chaiModule from "chai";
+import { expect } from "chai";
 import chaiHttp from "chai-http";
 import app from "../../src/app.js";
 
-chai.use(chaiHttp);
+const chai = chaiModule.use(chaiHttp);
 
 describe("Combinations Routes", () => {
   it("should return correct combinations for a phoneNumber: '23'", (done) => {
